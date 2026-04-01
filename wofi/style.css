@@ -1,0 +1,75 @@
+/* Catppuccin Mocha — Flamingo accent */
+
+window {
+    margin: 0;
+    border: 2px solid #f2cdcd;
+    border-radius: 16px;
+    background-color: rgba(30, 30, 46, 0.92);
+    font-family: "FiraCode Nerd Font";
+    font-size: 14px;
+}
+
+#input {
+    margin: 12px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #313244;
+    color: #cdd6f4;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(242, 205, 205, 0.2);
+}
+
+#input:focus {
+    box-shadow: 0 0 0 2px #f2cdcd;
+}
+
+#inner-box {
+    margin: 0 8px 8px 8px;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0;
+    border: none;
+}
+
+#text {
+    margin: 0 8px;
+    color: #cdd6f4;
+}
+
+#text:selected {
+    color: #1e1e2e;
+}
+
+#img {
+    margin-right: 8px;
+}
+
+#entry {
+    padding: 8px 12px;
+    margin: 2px 4px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    transition: all 0.15s ease;
+}
+
+#entry:selected {
+    background-color: #f2cdcd;
+    border: none;
+}
+
+#entry:selected #text {
+    color: #1e1e2e;
+    font-weight: bold;
+}

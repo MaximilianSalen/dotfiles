@@ -1,0 +1,202 @@
+/* ── Catppuccin Mocha — Flamingo accent ─────── */
+/* Base: #1e1e2e  Mantle: #181825  Crust: #11111b
+   Text: #cdd6f4  Subtext1: #bac2de  Overlay0: #6c7086
+   Surface0: #313244  Surface1: #45475a
+   Flamingo: #f2cdcd  Rosewater: #f5e0dc
+   Red: #f38ba8  Maroon: #eba0ac  Peach: #fab387
+   Yellow: #f9e2af  Green: #a6e3a1  Teal: #94e2d5
+   Sky: #89dceb  Sapphire: #74c7ec  Blue: #89b4fa
+   Lavender: #b4befe  Mauve: #cba6f7  Pink: #f5c2e7 */
+
+/* ── Global ─────────────────────────────────── */
+* {
+    font-family: "FiraCode Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(30, 30, 46, 0.85);
+    border-radius: 12px;
+    border: 1px solid rgba(242, 205, 205, 0.25);
+    color: #cdd6f4;
+}
+
+tooltip {
+    background: rgba(24, 24, 37, 0.95);
+    border: 1px solid rgba(242, 205, 205, 0.3);
+    border-radius: 8px;
+    color: #cdd6f4;
+}
+
+/* ── Shared module styling ──────────────────── */
+#workspaces,
+#window,
+#clock,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#tray,
+#custom-power {
+    padding: 0 12px;
+    margin: 4px 3px;
+    border-radius: 8px;
+    background: rgba(49, 50, 68, 0.5);
+    transition: all 0.2s ease;
+}
+
+/* ── Workspaces ─────────────────────────────── */
+#workspaces {
+    padding: 0 4px;
+    background: rgba(49, 50, 68, 0.5);
+}
+
+#workspaces button {
+    color: #6c7086;
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    color: #f2cdcd;
+    background: rgba(242, 205, 205, 0.1);
+}
+
+#workspaces button.active {
+    color: #1e1e2e;
+    background: #f2cdcd;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    color: #1e1e2e;
+    background: #f38ba8;
+}
+
+/* ── Window title ───────────────────────────── */
+#window {
+    color: #bac2de;
+    font-style: italic;
+}
+
+/* ── Clock ──────────────────────────────────── */
+#clock {
+    color: #f2cdcd;
+    font-weight: bold;
+    background: rgba(242, 205, 205, 0.08);
+    border: 1px solid rgba(242, 205, 205, 0.15);
+}
+
+/* ── System monitors ────────────────────────── */
+#cpu {
+    color: #a6e3a1;
+}
+
+#memory {
+    color: #89b4fa;
+}
+
+#temperature {
+    color: #f9e2af;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+    animation: pulse 1s ease-in-out infinite alternate;
+}
+
+/* ── Battery ────────────────────────────────── */
+#battery {
+    color: #a6e3a1;
+}
+
+#battery.charging {
+    color: #94e2d5;
+}
+
+#battery.warning:not(.charging) {
+    color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation: pulse 1s ease-in-out infinite alternate;
+}
+
+/* ── Network ────────────────────────────────── */
+#network {
+    color: #74c7ec;
+}
+
+#network.disconnected {
+    color: #6c7086;
+}
+
+/* ── Audio ──────────────────────────────────── */
+/* ── Bluetooth ──────────────────────────────── */
+#bluetooth {
+    color: #7aa2f7;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #6c7086;
+}
+
+#pulseaudio {
+    color: #cba6f7;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+}
+
+/* ── Tray ───────────────────────────────────── */
+#tray {
+    background: transparent;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* ── Power button ───────────────────────────── */
+#custom-power {
+    color: #f38ba8;
+    padding: 0 10px;
+}
+
+#custom-power:hover {
+    background: rgba(243, 139, 168, 0.15);
+}
+
+/* ── Hover glow on all modules ──────────────── */
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#battery:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#clock:hover {
+    background: rgba(242, 205, 205, 0.08);
+    border: 1px solid rgba(242, 205, 205, 0.12);
+}
+
+/* ── Animations ─────────────────────────────── */
+@keyframes pulse {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}

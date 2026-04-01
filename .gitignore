@@ -1,0 +1,31 @@
+# Secrets — never commit these
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.gpg
+.env
+.env.*
+
+# Editor / OS junk
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Neovim generated
+nvim/lazy-lock.json
+nvim/plugin/
+
+# Machine-specific local config (each user creates their own)
+hypr/local.conf
+
+# Personal git identity — not shareable
+git/.gitconfig
+
+# SSH config contains internal hostnames
+ssh/config
+
+# Backup dir created by install.sh
+.dotfiles_backup/

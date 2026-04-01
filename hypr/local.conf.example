@@ -1,0 +1,12 @@
+# Machine-specific Hyprland overrides
+# Copy this file to local.conf and edit to match your hardware:
+#   cp local.conf.example local.conf
+
+# Primary monitor name (find yours with: hyprctl monitors | grep Monitor)
+$primary_monitor = eDP-1
+
+# Keyboard layout (e.g., us, se, de, fr) — overrides the default (se)
+input:kb_layout = us
+
+# VPN connection name shown in NetworkManager (leave empty to disable toggle)
+$vpn_name =

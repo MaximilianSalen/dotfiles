@@ -1,0 +1,180 @@
+/* Tokyo Night for SwayNC */
+
+* {
+    font-family: "FiraCode Nerd Font";
+    font-size: 13px;
+}
+
+/* ── Notification popups ────────────────────── */
+.notification-row {
+    outline: none;
+}
+
+.notification-row:hover {
+    background: transparent;
+}
+
+.notification {
+    background: #1a1b26;
+    border: 2px solid #3b4261;
+    border-radius: 12px;
+    margin: 6px 12px;
+    padding: 0;
+    transition: all 200ms ease;
+}
+
+.notification:hover {
+    border-color: #7aa2f7;
+}
+
+.notification-content {
+    padding: 12px;
+}
+
+.summary {
+    color: #c0caf5;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.body {
+    color: #a9b1d6;
+    font-size: 12px;
+}
+
+.time {
+    color: #565f89;
+    font-size: 11px;
+}
+
+.close-button {
+    background: #3b4261;
+    color: #c0caf5;
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin: 8px;
+    border: none;
+}
+
+.close-button:hover {
+    background: #f7768e;
+    color: #1a1b26;
+}
+
+.notification.low {
+    border-color: #9ece6a;
+}
+
+.notification.normal {
+    border-color: #7aa2f7;
+}
+
+.notification.critical {
+    border-color: #f7768e;
+    background: #1a1b26;
+}
+
+/* ── Notification image/icon ────────────────── */
+.notification-default-action .notification-content .image {
+    border-radius: 8px;
+    margin-right: 12px;
+}
+
+/* ── Control center panel ───────────────────── */
+.control-center {
+    background: rgba(26, 27, 38, 0.95);
+    border: 2px solid #7aa2f7;
+    border-radius: 16px;
+    padding: 12px;
+}
+
+.control-center .notification {
+    background: #24283b;
+    border: 1px solid #3b4261;
+}
+
+.control-center .notification:hover {
+    border-color: #7aa2f7;
+}
+
+/* ── Title widget ───────────────────────────── */
+.widget-title {
+    color: #c0caf5;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 12px;
+}
+
+.widget-title > button {
+    background: #3b4261;
+    color: #c0caf5;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 16px;
+    font-size: 12px;
+}
+
+.widget-title > button:hover {
+    background: #f7768e;
+    color: #1a1b26;
+}
+
+/* ── DND toggle ─────────────────────────────── */
+.widget-dnd {
+    color: #a9b1d6;
+    padding: 4px 12px;
+}
+
+.widget-dnd > switch {
+    background: #3b4261;
+    border-radius: 12px;
+    border: none;
+}
+
+.widget-dnd > switch:checked {
+    background: #7aa2f7;
+}
+
+.widget-dnd > switch slider {
+    background: #c0caf5;
+    border-radius: 50%;
+}
+
+/* ── Volume slider ──────────────────────────── */
+.widget-volume {
+    padding: 4px 12px;
+    color: #a9b1d6;
+}
+
+.widget-volume > label {
+    color: #a9b1d6;
+    font-size: 12px;
+}
+
+.widget-volume > scale trough {
+    background: #3b4261;
+    border-radius: 6px;
+    min-height: 8px;
+}
+
+.widget-volume > scale highlight {
+    background: #7aa2f7;
+    border-radius: 6px;
+    min-height: 8px;
+}
+
+.widget-volume > scale slider {
+    background: #c0caf5;
+    border-radius: 50%;
+    min-height: 16px;
+    min-width: 16px;
+}
+
+/* ── Floating notification counter ──────────── */
+.floating-notifications.background .notification-row .notification-background {
+    background: transparent;
+}
+
+.blank-window {
+    background: transparent;
+}
