@@ -1,12 +1,8 @@
-/* ── Catppuccin Mocha — Flamingo accent ─────── */
+/* ── Catppuccin Mocha — Peach monochrome ────── */
 /* Base: #1e1e2e  Mantle: #181825  Crust: #11111b
    Text: #cdd6f4  Subtext1: #bac2de  Overlay0: #6c7086
    Surface0: #313244  Surface1: #45475a
-   Flamingo: #f2cdcd  Rosewater: #f5e0dc
-   Red: #f38ba8  Maroon: #eba0ac  Peach: #fab387
-   Yellow: #f9e2af  Green: #a6e3a1  Teal: #94e2d5
-   Sky: #89dceb  Sapphire: #74c7ec  Blue: #89b4fa
-   Lavender: #b4befe  Mauve: #cba6f7  Pink: #f5c2e7 */
+   Peach: #fab387  Red: #f38ba8  Yellow: #f9e2af */
 
 /* ── Global ─────────────────────────────────── */
 * {
@@ -18,13 +14,13 @@
 window#waybar {
     background: rgba(30, 30, 46, 0.85);
     border-radius: 12px;
-    border: 1px solid rgba(242, 205, 205, 0.25);
+    border: 1px solid rgba(250, 179, 135, 0.25);
     color: #cdd6f4;
 }
 
 tooltip {
     background: rgba(24, 24, 37, 0.95);
-    border: 1px solid rgba(242, 205, 205, 0.3);
+    border: 1px solid rgba(250, 179, 135, 0.3);
     border-radius: 8px;
     color: #cdd6f4;
 }
@@ -42,17 +38,16 @@ tooltip {
 #pulseaudio,
 #tray,
 #custom-power {
-    padding: 0 12px;
-    margin: 4px 3px;
-    border-radius: 8px;
-    background: rgba(49, 50, 68, 0.5);
+    padding: 0 10px;
+    margin: 0;
+    background: transparent;
     transition: all 0.2s ease;
 }
 
 /* ── Workspaces ─────────────────────────────── */
 #workspaces {
     padding: 0 4px;
-    background: rgba(49, 50, 68, 0.5);
+    background: transparent;
 }
 
 #workspaces button {
@@ -66,13 +61,13 @@ tooltip {
 }
 
 #workspaces button:hover {
-    color: #f2cdcd;
-    background: rgba(242, 205, 205, 0.1);
+    color: #fab387;
+    background: rgba(250, 179, 135, 0.1);
 }
 
 #workspaces button.active {
     color: #1e1e2e;
-    background: #f2cdcd;
+    background: #fab387;
     font-weight: bold;
 }
 
@@ -89,23 +84,21 @@ tooltip {
 
 /* ── Clock ──────────────────────────────────── */
 #clock {
-    color: #f2cdcd;
+    color: #fab387;
     font-weight: bold;
-    background: rgba(242, 205, 205, 0.08);
-    border: 1px solid rgba(242, 205, 205, 0.15);
 }
 
 /* ── System monitors ────────────────────────── */
 #cpu {
-    color: #a6e3a1;
+    color: #fab387;
 }
 
 #memory {
-    color: #89b4fa;
+    color: #fab387;
 }
 
 #temperature {
-    color: #f9e2af;
+    color: #fab387;
 }
 
 #temperature.critical {
@@ -115,11 +108,11 @@ tooltip {
 
 /* ── Battery ────────────────────────────────── */
 #battery {
-    color: #a6e3a1;
+    color: #fab387;
 }
 
 #battery.charging {
-    color: #94e2d5;
+    color: #fab387;
 }
 
 #battery.warning:not(.charging) {
@@ -133,7 +126,7 @@ tooltip {
 
 /* ── Network ────────────────────────────────── */
 #network {
-    color: #74c7ec;
+    color: #fab387;
 }
 
 #network.disconnected {
@@ -143,7 +136,7 @@ tooltip {
 /* ── Audio ──────────────────────────────────── */
 /* ── Bluetooth ──────────────────────────────── */
 #bluetooth {
-    color: #7aa2f7;
+    color: #fab387;
 }
 
 #bluetooth.disabled,
@@ -152,7 +145,7 @@ tooltip {
 }
 
 #pulseaudio {
-    color: #cba6f7;
+    color: #fab387;
 }
 
 #pulseaudio.muted {
@@ -174,12 +167,12 @@ tooltip {
 
 /* ── Power button ───────────────────────────── */
 #custom-power {
-    color: #f38ba8;
+    color: #fab387;
     padding: 0 10px;
 }
 
 #custom-power:hover {
-    background: rgba(243, 139, 168, 0.15);
+    background: rgba(250, 179, 135, 0.15);
 }
 
 /* ── Hover glow on all modules ──────────────── */
@@ -191,8 +184,7 @@ tooltip {
 #bluetooth:hover,
 #pulseaudio:hover,
 #clock:hover {
-    background: rgba(242, 205, 205, 0.08);
-    border: 1px solid rgba(242, 205, 205, 0.12);
+    color: #fbc4a0;
 }
 
 /* ── Animations ─────────────────────────────── */

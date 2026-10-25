@@ -32,3 +32,6 @@ ssh/config
 
 # Backup dir created by install.sh
 .dotfiles_backup/
+
+# Editor/installer backups
+*.bak*

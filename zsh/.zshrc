@@ -83,8 +83,13 @@ alias zshcfg="nvim ~/.zshrc"
 
 # GPG
 export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
+# gpg-agent handles SSH auth via YubiKey — only relevant on the real machine,
+# not in containers/pods (KUBERNETES_SERVICE_HOST, /.dockerenv) and not in ssh
+# sessions (SSH_CONNECTION), where it would clobber the forwarded agent socket
+if [[ -z "$KUBERNETES_SERVICE_HOST" && -z "$SSH_CONNECTION" && ! -f /.dockerenv ]]; then
+  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+  gpgconf --launch gpg-agent
+fi
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -109,5 +114,19 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 
+# pods have no system locale — without UTF-8, tmux/zsh icons render as ASCII garbage
+export LANG=${LANG:-en_US.UTF-8}
+
+# kubectl exec hardcodes TERM=xterm; upgrade it so kitty rendering works
+# (xterm-kitty terminfo is baked into the devbox image)
+[[ $TERM == xterm ]] && export TERM=xterm-kitty
+
 # Starship prompt
 eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Tokens and work-only aliases stay out of this public repo
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"

@@ -1,8 +1,21 @@
 palette = "catppuccin_mocha"
 
 format = """
-$directory$git_branch$git_status$cmd_duration
+$username$hostname$directory$git_branch$git_status$cmd_duration
 $character"""
+
+# username + hostname only render inside k8s pods (KUBERNETES_SERVICE_HOST set)
+# or ssh sessions (SSH_CONNECTION set — sshd strips the pod env, so both are needed)
+[username]
+detect_env_vars = ["KUBERNETES_SERVICE_HOST", "SSH_CONNECTION"]
+style_user = "bold green"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+detect_env_vars = ["KUBERNETES_SERVICE_HOST", "SSH_CONNECTION"]
+style = "bold green"
+format = "[@$hostname]($style)"
 
 [directory]
 style = "bold lavender"

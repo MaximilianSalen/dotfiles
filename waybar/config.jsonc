@@ -7,20 +7,16 @@
     "margin-left": 10,
     "margin-right": 10,
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
+        "clock"
     ],
     "modules-center": [
-        "clock"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "tray",
         "bluetooth",
         "pulseaudio",
         "network",
-        "cpu",
-        "memory",
-        "temperature",
         "battery",
         "custom/power"
     ],
@@ -48,31 +44,15 @@
         "separate-outputs": true
     },
     "clock": {
-        "format": " {:%H:%M}",
-        "format-alt": " {:%A, %d %B %Y}",
+        "format": " {:%H:%M  ·   %A, %d %B}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
             "weeks-pos": "left",
             "format": {
-                "today": "<span color='#f2cdcd'><b>{}</b></span>"
+                "today": "<span color='#fab387'><b><u>{}</u></b></span>"
             }
         }
-    },
-    "cpu": {
-        "format": " {usage}%",
-        "interval": 3,
-        "tooltip": true
-    },
-    "memory": {
-        "format": " {percentage}%",
-        "interval": 5,
-        "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
-    },
-    "temperature": {
-        "format": " {temperatureC}°C",
-        "critical-threshold": 80,
-        "format-critical": " {temperatureC}°C"
     },
     "battery": {
         "states": {
@@ -81,22 +61,25 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
+        "format-charging": "󰢝 {capacity}%",
         "format-plugged": " {capacity}%",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "󰂎",
+            "󰁺",
+            "󰁾",
+            "󰂂",
+            "󰁹"
         ]
     },
     "network": {
-        "format-wifi": " {signalStrength}%",
+        "format-wifi": "{icon}",
         "format-ethernet": " {ipaddr}",
         "format-disconnected": " off",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}",
-        "on-click": "~/.config/waybar/scripts/toggle-vpn.sh",
+        "on-click": "nm-connection-editor",
+        "format-icons": {
+            "wifi": ["󰤯", "󰤟", "󰤢", "󰤥"]
+        },
         "on-click-right": "nm-connection-editor"
     },
     "pulseaudio": {
@@ -130,7 +113,7 @@
         "tooltip-format": "{controller_alias}\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_battery_percentage}%",
-        "on-click": "blueman-manager",
-        "on-click-right": "bluetoothctl power off || bluetoothctl power on"
+        "on-click": "kitty --title 'Bluetooth' bluetuith",
+        "on-click-right": "sh -c 'bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on'"
     }
 }

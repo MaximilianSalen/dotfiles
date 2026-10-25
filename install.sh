@@ -37,6 +37,7 @@ declare -A LINKS=(
     # file in repo                         → target location
     ["$DOTFILES/zsh/.zshrc"]="$HOME/.zshrc"
     ["$DOTFILES/tmux/.tmux.conf"]="$HOME/.tmux.conf"
+    ["$DOTFILES/tmux/.tmux.conf.local"]="$HOME/.tmux.conf.local"
     ["$DOTFILES/git/.gitconfig"]="$HOME/.gitconfig"
     ["$DOTFILES/ssh/config"]="$HOME/.ssh/config"
     ["$DOTFILES/kitty/kitty.conf"]="$HOME/.config/kitty/kitty.conf"
@@ -118,3 +119,4 @@ if [ -d "$BACKUP_DIR" ]; then
     warn "Backups saved to: $BACKUP_DIR"
 fi
 ok "Done!"
+info "For the GTK theme, icons, cursor and font, run: $DOTFILES/appearance.sh"
